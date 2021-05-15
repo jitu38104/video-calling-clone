@@ -68,11 +68,11 @@ function addVideoStream(video, stream){
         video.play();        
     });
     //videoGrid.appendChild(video);
-    sessionStorage.setItem("newID", stream.id); //upcoming video tag
+    //sessionStorage.setItem("newID", stream.id); //upcoming video tag
 
-    if(sessionStorage.getItem("newID") != sessionStorage.getItem("prevID")){    //I did this bcoz it was adding same video tag two times therefore if the same video comes with same id then it wouldn't allowed.
-        videoContainer(video, stream.id);
-    }
+    //if(sessionStorage.getItem("newID") != sessionStorage.getItem("prevID")){    //I did this bcoz it was adding same video tag two times therefore if the same video comes with same id then it wouldn't allowed.
+        videoContainer(video);//, stream.id);
+    //}
 }
 
 function connectToNewUser(id, stream){  //informing others with stream
@@ -92,8 +92,8 @@ function connectToNewUser(id, stream){  //informing others with stream
 }
 
 
-function videoContainer(videoTag, id){ 
-    sessionStorage.setItem("prevID", id); //already has come that id
+function videoContainer(videoTag){//, id){ 
+    //sessionStorage.setItem("prevID", id); //already has come that id
     const videoId = Math.round(Math.random() * 1E9);
     const vidContainer = document.querySelector(".video-container");
     const videoBoxDiv = document.createElement("div");
