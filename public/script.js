@@ -11,7 +11,7 @@ const peers = {};
 myVideo.muted = true; //to mute our own video voice not the other users', bcoz we just need the feedback of the others
     
 navigator.mediaDevices.getUserMedia({   //sending our video stream to other clients
-    audio: true,
+    audio: false,
     video: true
 }).then(stream =>{
     addVideoStream(myVideo, stream); //I can see my video streaming now!
