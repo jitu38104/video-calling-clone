@@ -30,7 +30,7 @@ navigator.mediaDevices.getUserMedia({   //sending our video stream to other clie
     });    
 
     socket.on("user-connected", userId => { //it triggers the event to inform all the users of the current room of joining the new user except the joined user himself.
-        // console.log(userId, "is connected just now!");
+        console.log(userId, "is connected just now!");
         alertMsg.innerText = `New user has joined the room!`;
         alertMsg.style.display = "block";
         $("#alertMsg").fadeOut(5000);
@@ -44,7 +44,7 @@ navigator.mediaDevices.getUserMedia({   //sending our video stream to other clie
 });
 
 socket.on("user-disconnect", userId =>{
-    // console.log(userId, "is disconnected");
+    console.log(userId, "is disconnected");
     if(peers[userId]) {peers[userId].close();}
 
     alertMsg.innerText = `User left the room!`;
