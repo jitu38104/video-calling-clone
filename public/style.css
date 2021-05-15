@@ -1,0 +1,78 @@
+body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(#cfd9df , #e2ebf0); 
+}
+
+button{
+    color: #007bff;
+    background-color: rgb(187, 187, 187);
+    font-weight: 500;
+    font-family: system-ui;
+    border: 1px solid transparent;
+    margin: 10px 5px 5px 0px;        
+}
+button:focus{
+    outline: none;
+}
+button:hover{
+    border-color: white;
+}
+button.mic-path{
+    margin-left: 20px;
+}
+
+video{
+    margin-bottom: -15px;
+    height: 100%;
+    width: 100%;    
+}
+
+.site-name > .brand-name{
+    margin-top: 1px;
+    margin-left: -15px;
+}
+.brand-name p{
+    font-weight: 700;
+    font-size: 20px;
+    color: #c00;
+}
+#down{
+    margin-top: -20px;
+}
+
+.showDiv{
+    visibility: visible;        
+    opacity: 1;
+    transition: visibility 0.2s, opacity 0.5s linear;
+}
+.hideDiv{
+    visibility: hidden;        
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}   
+
+.alert-msg{
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%,-50%);
+    border-radius: 13px;
+    padding: 10px 30px;
+}
+
+@media only screen and (max-width: 556px) {
+    .social-icons > .site-name{
+        margin-left: 6.5em;
+    }
+}
+@media only screen and (min-width: 556px) {
+    .social-icons > .site-name{
+        padding-left: 3em;    
+    }
+    #hideShow{
+        margin-right: 20px;
+    }
+}

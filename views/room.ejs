@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Streamer</title>           
+    <link rel="shortcut icon" href="/favicon.webp" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-classic.css" />
+</head>
+<body>
+    <div class="alert-msg bg-dark text-light" id="alertMsg"> 
+        <!-- new user coming alert! -->
+    </div>
+    
+    <div class="social-icons w-100">                
+        <div class="site-name float-left mt-2 row">
+            <div class="col-sm-12 col-6 col-md-6 d-inline"><img src="/favicon.webp" alt="brandImg" height="60" width="60"/></div>
+            <div class="brand-name col-sm-12 col-6 col-md-6">
+                <p id="up">ZOOM</p>
+                <p id="down">CLONE</p>
+            </div>
+        </div>
+        
+        <div class="float-right mr-2 mt-3 row" >
+            <div class="hideDiv" id="share"></div> &nbsp;&nbsp;
+            <div><button class="float-right btn btn-danger mt-2" id="hideShow">Share</button></div>            
+        </div>
+    </div>
+
+    <div class="video-container d-flex justify-content-center w-100 h-100 row">
+        <!-- all upcoming videos will be here! -->        
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/d32e880310.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+<script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script> 
+<script src="/socket.io/socket.io.js"></script>
+<script> const ROOM_ID = "<%= roomId %>"; </script>
+<script src="/script.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#share").jsSocials({
+            url: window.location.href,
+            text: "Click this link to enter the room",
+            showLabel: false,
+            showCount: "inside",
+            shares: ["email", "facebook", "twitter", "telegram", "whatsapp"]
+        });               
+    });   
+</script>
+</html>
