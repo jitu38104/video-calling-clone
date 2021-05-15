@@ -20,7 +20,7 @@ navigator.mediaDevices.getUserMedia({   //sending our video stream to other clie
     /*Therefore in order to be able to receive their call to me "call" is supposed to be triggered*/
     myPeer.on("call", call =>{      //receiving calls from other users
         call.answer(stream);        //now answering their call and send them our stream
-        // console.log(stream);
+        console.log(stream);
          
         const video = document.createElement("video");
         call.on("stream", resUserStream=>{            //getting response from them and add their stream on our browser  

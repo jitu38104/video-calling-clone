@@ -2,7 +2,7 @@ require('peer').PeerServer({ port: 8000, path: '/' });
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const http = require("http").Server(app);
+const http = require("https").Server(app);
 const io = require("socket.io")(http);
 const {v4: uuidv4} = require("uuid");
 const users = {};
