@@ -1,8 +1,7 @@
 const socket = io('/');
 const myPeer = new Peer(undefined, {
-    host: "/",
-    port: 443
-    
+    secure: true,
+    port: 443    
 });
 const videoGrid = document.querySelector(".video-container");
 const alertMsg = document.getElementById("alertMsg");
@@ -12,7 +11,7 @@ const peers = {};
 myVideo.muted = true; //to mute our own video voice not the other users', bcoz we just need the feedback of the others
     
 navigator.mediaDevices.getUserMedia({   //sending our video stream to other clients
-    audio: false,
+    audio: true,
     video: true
 }).then(stream =>{
     addVideoStream(myVideo, stream); //I can see my video streaming now!
