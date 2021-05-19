@@ -1,4 +1,4 @@
-require('peer').PeerServer({ port: 443, path: '/', secure: true});
+require('peer').PeerServer({ port: 443, path: '/'});
 const express = require("express");
 const app = express();
 const cors = require("cors");
